@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8e1e7;
+            color: #333;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #d6336c;
+        }
+        p {
+            font-size: 18px;
+        }
+        .heart {
+            color: red;
+            font-size: 50px;
+            animation: heartbeat 1s infinite, glow 1.5s infinite alternate;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px red; }
+            100% { text-shadow: 0 0 20px red; }
+        }
+        .button {
+            background-color: #d6336c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #b52e5a;
+        }
+        #message {
+            display: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: #d6336c;
+            margin-top: 20px;
+        }
+        .prompt {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>I'm Sorry, My Love</h1>
+        <p>I'm so sorry for what happened. I never meant to hurt you, I'm so sorry lovey, please don't leave me☹️.</p>
+        <p>Bati nata lablab☹️.</p>
+        <div class="heart">❤️</div>
+        <p class="prompt" id="prompt-text">(Tap the button below, please?)</p>
+        <button class="button" onclick="showMessage()">Forgive Me☹️?</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        let clickCount = 0;
+
+        function showMessage() {
+            let message = document.getElementById("message");
+            let promptText = document.getElementById("prompt-text");
+            clickCount++;
+
+            if (clickCount === 1) {
+                message.innerHTML = "ayaw mo mag bati saakun☹️? ❤️";
+                message.style.display = "block";
+                promptText.innerHTML = "(Tap again, please?)";
+            } else if (clickCount === 2) {
+                message.innerHTML = "I love you so much. I CAN’T LOSE YOU, SO PLEASEEE DON’T LEAVE ME☹️";
+                promptText.style.display = "none"; // Hide prompt after final message
+            }
+        }
+    </script>
+
+</body>
+</html>
